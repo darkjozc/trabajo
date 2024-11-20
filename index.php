@@ -8,6 +8,9 @@
 <body>
     ><p>Juan Josue Canahuire choque</p>
      <!-- etiquita PHP -->
+
+
+
     <?php
     echo "implemento de php </br>";
     $dato_1 = 1;

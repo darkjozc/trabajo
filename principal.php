@@ -10,6 +10,16 @@
 
 <body>
     <div>
+    <h1>PHP BASICO</h1>
+ <ul>
+    <ol>1. operaciones con String</ol>
+    <ol>2. operadores aritmetico</ol>
+    <ol>3. tipos de datos</ol>
+    <ol>4. operaciones con array's</ol>
+    <ol>5. condicionales</ol>
+    <ol>6. cliclos</ol>
+    <ol>7. salir</ol>
+ </ul>
         <h6>Formulario</h6>
         <hr>
         <!-- JUAN JOSUE CANAHUIRE CHOQUE-->
@@ -27,6 +37,7 @@
  
         </form>
         <?php
+        include "./operadoresLogicos.php";
         // codigo php
         ///echo $_GET["fruta"]."<br>";
 
@@ -39,6 +50,13 @@
         }
 
         echo $_POST["numero"];
+
+        $ol = new operadoresLogicos();
+        $ol-> operadores();
+        $ol -> saludar();
+
+        
+
         ?>
     </div>
 
