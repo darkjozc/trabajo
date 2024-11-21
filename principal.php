@@ -10,16 +10,16 @@
 
 <body>
     <div>
-    <h1>PHP BASICO</h1>
- <ul>
-    <ol>1. operaciones con String</ol>
-    <ol>2. operadores aritmetico</ol>
-    <ol>3. tipos de datos</ol>
-    <ol>4. operaciones con array's</ol>
-    <ol>5. condicionales</ol>
-    <ol>6. cliclos</ol>
-    <ol>7. salir</ol>
- </ul>
+        <h1>PHP BASICO</h1>
+        <ul>
+            <ol>1. operaciones con String</ol>
+            <ol>2. operadores aritmetico</ol>
+            <ol>3. tipos de datos</ol>
+            <ol>4. operaciones con array's</ol>
+            <ol>5. condicionales</ol>
+            <ol>6. cliclos</ol>
+            <ol>7. salir</ol>
+        </ul>
         <h6>Formulario</h6>
         <hr>
         <!-- JUAN JOSUE CANAHUIRE CHOQUE-->
@@ -34,10 +34,18 @@
             <hr>
 
 
- 
+
         </form>
         <?php
         include "./operadoresLogicos.php";
+        include "./operacionesString.php";
+        include "./Aritmeticos.php";
+        include "./array.php";
+        include "./ciclos.php";
+        include "./condicionales.php";
+        include "./datos.php";
+        
+
         // codigo php
         ///echo $_GET["fruta"]."<br>";
 
@@ -49,13 +57,71 @@
             echo $_GET["numero"] . "<br>";
         }
 
-        echo $_POST["numero"];
+        if (isset($_POST["numero"])) {
+            $opcion = $_POST["numero"];
+
+
+            switch ($opcion) {
+                case 1:
+                    echo "<br>";
+                    $operaciones = new operacionesString();
+                    echo "ingreso al caso numero 1";
+                    $operaciones->funcionesString();
+                    echo "<br>";
+                    break;
+                default;
+                    echo "<br>";
+                    echo "ingresa una  opcion valida";
+                    echo "<br>";
+                    break;
+    
+                case 2:
+                    echo "<br>";
+                    $ar = new operacionesAritmeticos;
+                    echo "ingreso al caso numero 2";
+                    $ar->funcionesAritmeticos();
+                    echo "<br>";
+                    break;
+                case 3:
+                    echo "<br>";
+                    $dt = new operacionesDatos();
+                    echo "ingreso al caso numero 3";
+                    $dt->funcionesDatos();
+                    echo "<br>";
+                    break;
+                case 4:
+                    echo "<br>";
+                    $ar = new operacionesArray();
+                    echo "ingreso al caso numero 4";
+                    $ar->funcionesArray();
+                    echo "<br>";
+                    break;
+                case 5:
+                    echo "<br>";
+                    $co = new operacionesCondicionales();
+                    echo "ingreso al caso numero 5";
+                    $co->funcionesCondicionales();
+                    echo "<br>";
+                    break;
+                case 6:
+                    echo "<br>";
+                    $cl = new operacionesCiclos();
+                    echo "ingreso al caso numero 6";
+                    $cl->funcionesCiclos();
+                    echo "<br>";
+                    break;
+                        
+                
+            }
+        }
+
+        //echo $_POST["numero"];
 
         $ol = new operadoresLogicos();
-        $ol-> operadores();
-        $ol -> saludar();
+        $ol->operadores();
+        $ol->saludar();
 
-        
+
 
         ?>
     </div>
